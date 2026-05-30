@@ -118,8 +118,8 @@ fun GameScreen(
                                 horizontalArrangement = Arrangement.SpaceBetween,
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
-                                androidx.compose.foundation.Image(
-                                    painter = androidx.compose.ui.res.painterResource(id = com.example.R.drawable.img_book_icon_1780098789806),
+                                coil.compose.AsyncImage(
+                                    model = com.example.R.drawable.img_book_icon_1780098789806,
                                     contentDescription = "Livro do Conhecimento",
                                     modifier = Modifier
                                         .size(64.dp),
@@ -145,8 +145,8 @@ fun GameScreen(
                                     )
                                 }
                                 
-                                androidx.compose.foundation.Image(
-                                    painter = androidx.compose.ui.res.painterResource(id = com.example.R.drawable.img_scroll_icon_1780098806250),
+                                coil.compose.AsyncImage(
+                                    model = com.example.R.drawable.img_scroll_icon_1780098806250,
                                     contentDescription = "Pergaminho Sagrado",
                                     modifier = Modifier
                                         .size(64.dp),

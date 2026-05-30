@@ -47,7 +47,7 @@ jobs:
             
             Clique abaixo para baixar o arquivo APK nativo do jogo e instalar diretamente no seu telefone celular Android:
             
-            👉 **[Clique Aqui para Baixar o Jogo (app-debug.apk)](https://github.com/${{ github.repository }}/releases/latest/download/app-debug.apk)**
+            👉 **[Clique Aqui para Baixar o Jogo (app-debug.apk)](https://github.com/${{ github.repository }}/releases/download/latest/app-debug.apk)**
             
             ### 📜 Guia Rápido de Instalação:
             1. Baixe o arquivo `app-debug.apk` clicando no link acima.
