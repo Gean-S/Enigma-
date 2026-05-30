@@ -1,0 +1,6 @@
+{
+  "name": "Enigma",
+  "description": "Um app de charadas com temática sombria, onde você precisará resolver enigmas para avançar pelos níveis Fácil, Difícil e Impossível.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
