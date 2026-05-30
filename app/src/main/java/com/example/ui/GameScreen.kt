@@ -2,6 +2,7 @@ package com.example.ui
 
 import androidx.compose.animation.*
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -14,6 +15,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
@@ -118,8 +120,8 @@ fun GameScreen(
                                 horizontalArrangement = Arrangement.SpaceBetween,
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
-                                coil.compose.AsyncImage(
-                                    model = com.example.R.drawable.img_book_icon_1780098789806,
+                                Image(
+                                    painter = painterResource(id = com.example.R.drawable.img_book_icon_1780098789806),
                                     contentDescription = "Livro do Conhecimento",
                                     modifier = Modifier
                                         .size(64.dp),
@@ -145,8 +147,8 @@ fun GameScreen(
                                     )
                                 }
                                 
-                                coil.compose.AsyncImage(
-                                    model = com.example.R.drawable.img_scroll_icon_1780098806250,
+                                Image(
+                                    painter = painterResource(id = com.example.R.drawable.img_scroll_icon_1780098806250),
                                     contentDescription = "Pergaminho Sagrado",
                                     modifier = Modifier
                                         .size(64.dp),

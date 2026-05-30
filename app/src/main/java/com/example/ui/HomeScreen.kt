@@ -186,8 +186,8 @@ fun HomeScreen(
                                         .height(180.dp)
                                 ) {
                                     // Profile cover/banner representing the creepy blood moon castle!
-                                    coil.compose.AsyncImage(
-                                        model = com.example.R.drawable.img_profile_cover_1780097347178,
+                                    Image(
+                                        painter = painterResource(id = com.example.R.drawable.img_profile_cover_1780097347178),
                                         contentDescription = "Capa de Perfil",
                                         modifier = Modifier
                                             .fillMaxWidth()
@@ -196,8 +196,8 @@ fun HomeScreen(
                                     )
                                     
                                     // Overlapping avatar based on selectedAvatar or falls back nicely
-                                    coil.compose.AsyncImage(
-                                        model = getAvatarResId(progress.selectedAvatar),
+                                    Image(
+                                        painter = painterResource(id = getAvatarResId(progress.selectedAvatar)),
                                         contentDescription = "Avatar do Aventureiro",
                                         modifier = Modifier
                                             .size(96.dp)
@@ -501,8 +501,8 @@ fun HomeScreen(
                                 Spacer(modifier = Modifier.width(8.dp))
 
                                 // Avatar
-                                coil.compose.AsyncImage(
-                                    model = getAvatarResId(entry.avatarId),
+                                Image(
+                                    painter = painterResource(id = getAvatarResId(entry.avatarId)),
                                     contentDescription = entry.name,
                                     modifier = Modifier
                                         .size(44.dp)
@@ -621,8 +621,8 @@ fun HomeScreen(
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
                                     Box {
-                                        coil.compose.AsyncImage(
-                                            model = av.resId,
+                                        Image(
+                                            painter = painterResource(id = av.resId),
                                             contentDescription = av.name,
                                             modifier = Modifier
                                                 .size(50.dp)

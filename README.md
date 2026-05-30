@@ -1,6 +1,6 @@
 # 🏰 Oráculo das Sombras — Enigma Riddle RPG
 
-[![Baixar APK](https://img.shields.io/badge/Download-APK%20Gratuito-red?style=for-the-badge&logo=android&logoColor=white)](https://github.com/pegapato111/Enigma-Riddle-RPG/releases/latest/download/app-debug.apk)
+[![Baixar APK](https://img.shields.io/badge/Download-APK%20Gratuito-red?style=for-the-badge&logo=android&logoColor=white)](https://github.com/Gean-S/Enigma-/releases/latest/download/app-debug.apk)
 
 Um envolvente jogo de RPG de adivinhação medieval e fantasia sombria, onde você assume o papel de um herói místico desvendando charadas profundas e antigas para ganhar prestígio, glória e subir na classificação mundial dos sábios.
 
@@ -11,7 +11,7 @@ Um envolvente jogo de RPG de adivinhação medieval e fantasia sombria, onde voc
 Você pode baixar e instalar o jogo diretamente no seu celular em menos de um minuto, sem precisar compilar ou rodar linhas de comando:
 
 ### 🚀 Link Direto para Download
-👉 **[Clique aqui para Baixar o APK Direto](https://github.com/pegapato111/Enigma-Riddle-RPG/releases/latest/download/app-debug.apk)**
+👉 **[Clique aqui para Baixar o APK Direto](https://github.com/Gean-S/Enigma-/releases/latest/download/app-debug.apk)**
 
 ---
 
