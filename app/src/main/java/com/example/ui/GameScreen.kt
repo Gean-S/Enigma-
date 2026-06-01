@@ -15,6 +15,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
@@ -186,10 +187,27 @@ fun GameScreen(
                                 Text(
                                     text = "✦ Sussurro: ${targetRiddle.hint} ✦",
                                     color = MaterialTheme.colorScheme.secondary,
-                                    modifier = Modifier.padding(bottom = 16.dp),
+                                    modifier = Modifier.padding(bottom = 8.dp),
                                     textAlign = TextAlign.Center,
                                     fontFamily = androidx.compose.ui.text.font.FontFamily.Serif
                                 )
+                            }
+                            
+                            if (state.aiHint.isNotEmpty()) {
+                                Card(
+                                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer.copy(alpha = 0.3f)),
+                                    modifier = Modifier.padding(bottom = 16.dp).fillMaxWidth()
+                                ) {
+                                    Text(
+                                        text = "🔮 Oráculo: \"${state.aiHint}\"",
+                                        color = MaterialTheme.colorScheme.onTertiaryContainer,
+                                        modifier = Modifier.padding(16.dp),
+                                        textAlign = TextAlign.Center,
+                                        fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
+                                        fontFamily = androidx.compose.ui.text.font.FontFamily.Serif,
+                                        fontSize = 14.sp
+                                    )
+                                }
                             }
                             
                             if (state.isAlmostThere && !state.isCorrect) {
@@ -238,30 +256,50 @@ fun GameScreen(
                                 modifier = Modifier.fillMaxWidth(),
                                 horizontalArrangement = Arrangement.SpaceBetween
                             ) {
-                                OutlinedButton(
-                                    onClick = { viewModel.revealHint() },
-                                    colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colorScheme.secondary),
-                                    border = androidx.compose.foundation.BorderStroke(1.dp, com.example.ui.theme.BorderColor),
-                                    shape = androidx.compose.foundation.shape.CutCornerShape(8.dp),
-                                    modifier = Modifier.weight(1f).padding(end = 8.dp).height(56.dp),
-                                    enabled = !state.showHint && targetRiddle.id != 50
-                                ) {
-                                    Text("🕯️ Invocar Luz (-5)", fontFamily = androidx.compose.ui.text.font.FontFamily.Serif)
+                                Column(modifier = Modifier.weight(1f).padding(end = 4.dp)) {
+                                    OutlinedButton(
+                                        onClick = { viewModel.revealHint() },
+                                        colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colorScheme.secondary),
+                                        border = androidx.compose.foundation.BorderStroke(1.dp, com.example.ui.theme.BorderColor),
+                                        shape = androidx.compose.foundation.shape.CutCornerShape(8.dp),
+                                        modifier = Modifier.fillMaxWidth().height(56.dp),
+                                        enabled = !state.showHint && targetRiddle.id != 50
+                                    ) {
+                                        Text("🕯️ Luz (-5)", fontSize = 12.sp, fontFamily = androidx.compose.ui.text.font.FontFamily.Serif)
+                                    }
+                                }
+
+                                Column(modifier = Modifier.weight(1f).padding(horizontal = 4.dp)) {
+                                    Button(
+                                        onClick = { viewModel.askOracle() },
+                                        colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.tertiary),
+                                        shape = androidx.compose.foundation.shape.CutCornerShape(8.dp),
+                                        modifier = Modifier.fillMaxWidth().height(56.dp),
+                                        enabled = !state.isLoadingAi
+                                    ) {
+                                        if (state.isLoadingAi) {
+                                            CircularProgressIndicator(modifier = Modifier.size(24.dp), color = Color.White, strokeWidth = 2.dp)
+                                        } else {
+                                            Text("🔮 Oráculo", fontSize = 12.sp, fontFamily = androidx.compose.ui.text.font.FontFamily.Serif)
+                                        }
+                                    }
                                 }
                                 
-                                Button(
-                                    onClick = { viewModel.submitAnswer(answerText) },
-                                    colors = ButtonDefaults.buttonColors(containerColor = androidx.compose.ui.graphics.Color.Transparent),
-                                    contentPadding = PaddingValues(),
-                                    modifier = Modifier.weight(1f).padding(start = 8.dp).height(56.dp)
-                                        .background(
-                                            androidx.compose.ui.graphics.Brush.verticalGradient(
-                                                listOf(com.example.ui.theme.BloodRed, com.example.ui.theme.DarkRedGradient)
-                                            ),
-                                            shape = androidx.compose.foundation.shape.CutCornerShape(8.dp)
-                                        )
-                                ) {
-                                    Text("DESVENDAR O SELO", color = androidx.compose.ui.graphics.Color.White, fontWeight = FontWeight.Bold, fontFamily = androidx.compose.ui.text.font.FontFamily.Serif)
+                                Column(modifier = Modifier.weight(1f).padding(start = 4.dp)) {
+                                    Button(
+                                        onClick = { viewModel.submitAnswer(answerText) },
+                                        colors = ButtonDefaults.buttonColors(containerColor = androidx.compose.ui.graphics.Color.Transparent),
+                                        contentPadding = PaddingValues(),
+                                        modifier = Modifier.fillMaxWidth().height(56.dp)
+                                            .background(
+                                                androidx.compose.ui.graphics.Brush.verticalGradient(
+                                                    listOf(com.example.ui.theme.BloodRed, com.example.ui.theme.DarkRedGradient)
+                                                ),
+                                                shape = androidx.compose.foundation.shape.CutCornerShape(8.dp)
+                                            )
+                                    ) {
+                                        Text("ABRIR", color = androidx.compose.ui.graphics.Color.White, fontWeight = FontWeight.Bold, fontSize = 12.sp, fontFamily = androidx.compose.ui.text.font.FontFamily.Serif)
+                                    }
                                 }
                             }
                             

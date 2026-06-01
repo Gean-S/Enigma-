@@ -8,6 +8,7 @@ import com.example.model.Riddle
 import com.example.model.easyRiddles
 import com.example.model.hardRiddles
 import com.example.model.impossibleRiddle
+import com.example.data.GeminiService
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -20,10 +21,15 @@ data class GameState(
     val currentRiddle: Riddle? = null,
     val showHint: Boolean = false,
     val isAlmostThere: Boolean = false,
-    val isCorrect: Boolean = false
+    val isCorrect: Boolean = false,
+    val aiHint: String = "",
+    val isLoadingAi: Boolean = false
 )
 
-class GameViewModel(private val repository: GameRepository) : ViewModel() {
+class GameViewModel(
+    private val repository: GameRepository,
+    private val geminiService: GeminiService
+) : ViewModel() {
 
     private val _uiState = MutableStateFlow(GameState())
     val uiState: StateFlow<GameState> = _uiState.asStateFlow()
@@ -176,6 +182,23 @@ class GameViewModel(private val repository: GameRepository) : ViewModel() {
         if (!state.showHint) {
             _uiState.value = state.copy(showHint = true)
             // Penalty for hint is applied when calculating points upon completion
+        }
+    }
+
+    fun askOracle() {
+        val state = _uiState.value
+        val riddle = state.currentRiddle ?: return
+        
+        if (state.isLoadingAi) return
+
+        _uiState.value = state.copy(isLoadingAi = true)
+        
+        viewModelScope.launch {
+            val response = geminiService.generateHint(riddle.question, riddle.hint)
+            _uiState.value = _uiState.value.copy(
+                aiHint = response,
+                isLoadingAi = false
+            )
         }
     }
 

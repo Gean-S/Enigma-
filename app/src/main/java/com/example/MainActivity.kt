@@ -20,12 +20,13 @@ class MainActivity : ComponentActivity() {
 
     val database = AppDatabase.getDatabase(this)
     val repository = GameRepository(database.userProgressDao())
+    val geminiService = com.example.data.GeminiService()
 
     setContent {
       val viewModel: GameViewModel = viewModel(
           factory = object : ViewModelProvider.Factory {
               override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                  return GameViewModel(repository) as T
+                  return GameViewModel(repository, geminiService) as T
               }
           }
       )

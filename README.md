@@ -1,28 +1,26 @@
 # 🏰 Oráculo das Sombras — Enigma Riddle RPG
 
-[![Baixar APK](https://img.shields.io/badge/Download-APK%20Gratuito-red?style=for-the-badge&logo=android&logoColor=white)](https://github.com/Gean-S/Enigma-/releases/latest/download/app-debug.apk)
+[![Baixar APK](https://img.shields.io/badge/Download-APK%20Gratuito-red?style=for-the-badge&logo=android&logoColor=white)](https://github.com/pegapato111/Enigma-Riddle-RPG/releases/latest/download/app-debug.apk)
 
 Um envolvente jogo de RPG de adivinhação medieval e fantasia sombria, onde você assume o papel de um herói místico desvendando charadas profundas e antigas para ganhar prestígio, glória e subir na classificação mundial dos sábios.
 
 ---
 
-## 📥 Como Baixar e Jogar no Celular (Automático)
+## 📥 Como Baixar e Jogar no Celular
 
-Você pode baixar e instalar o jogo diretamente no seu celular em menos de um minuto, sem precisar compilar ou rodar linhas de comando:
+### 🚀 Link para Download do APK
+👉 **[Clique aqui para acessar a página de lançamentos e baixar o APK](https://github.com/pegapato111/Enigma-Riddle-RPG/releases)**
 
-### 🚀 Link Direto para Download
-👉 **[Clique aqui para Baixar o APK Direto](https://github.com/Gean-S/Enigma-/releases/latest/download/app-debug.apk)**
+*(Nota: Se o link acima não funcionar, você pode exportar o projeto diretamente do AI Studio usando o botão "Export to GitHub" ou "Download ZIP" e compilar o arquivo você mesmo).*
 
 ---
 
-### 📜 Manual Rápido de Instalação:
+### 📜 Manual de Instalação:
 
-1. **Baixar o APK:** Clique no botão de download acima. O arquivo com extensão `.apk` será baixado no seu celular Android.
-2. **Abrir e Instalar:** Abra a sua barra de notificações ou a pasta de downloads do celular e clique no arquivo baixado (`app-debug.apk`).
-3. **Liberar Fontes Desconhecidas (Apenas se solicitado):**
-   - O Android, por segurança padrão, pode alertar que o app vem de fontes externas (GitHub).
-   - Simplesmente clique em **Configurações** no próprio aviso, ative a caixinha **Permitir desta fonte** (ou "Fontes Desconhecidas") e volte.
-4. **Pronto para Jogar!** Clique em **Instalar**, abra o ícone mágico do jogo na sua gaveta de aplicativos e comece sua jornada rúnica!
+1. **Baixar o APK:** Clique no link de download acima. Procure pelo arquivo `app-debug.apk` ou similar.
+2. **Abrir e Instalar:** Abra a sua pasta de downloads e clique no arquivo APK.
+3. **Liberar Fontes Desconhecidas:** Se o Android bloquear, vá em **Configurações > Segurança** e ative **Fontes Desconhecidas** (ou clique em "Permitir desta fonte" no aviso).
+4. **Pronto!** Divirta-se desvendando os mistérios!
 
 ---
 
